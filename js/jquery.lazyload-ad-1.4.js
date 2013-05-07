@@ -16,6 +16,7 @@
 var LazyLoader = {}; //namespace
 LazyLoader.timer = {};  // contains timers for scripts
 LazyLoader.scripts = [];  // contains called script references
+(function ($) {
 LazyLoader.load = function(url, context, callback) {
         // handle object or path
         var classname = null;
@@ -62,12 +63,12 @@ LazyLoader.load = function(url, context, callback) {
             alert(e);
         }
 } ;
-
+}(jQuery));
 
 /**
  *  Display an xray overlay to show Ad loading progression
  */
- 
+ (function ($) {
 var xrayAd = {
 
 	div: null,
@@ -238,7 +239,7 @@ var xrayAd = {
 
 
 } ;
-
+}(jQuery));
 
 /* •••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
    ••  Project: jQuery LazyLoad For Advertisement                   ••
@@ -542,7 +543,7 @@ var xrayAd = {
             	
             	var callback = null, script = null ;
             	if ( js2load.src ) {
-            		callback = js2load.callback || null ;
+            		callback = js2load.callback || null ;
             		js2load = js2load.src ;
             	}
             	
@@ -560,7 +561,7 @@ var xrayAd = {
             	    _debug('loadJS COMPLETE :: ' + js2load) ;
             	    if ( callback ) {
             	    	callback() ;
-            	    } else {
+            	    } else {
             	    	$.lazyLoadAdTimers.loadJS = setTimeout(function() {
             	    		self.trigger('onComplete') ;	
             	    	}, settings.timeout) ;
