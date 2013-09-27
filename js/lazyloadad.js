@@ -3,7 +3,7 @@
   $(document).ready(function() {
     $(Drupal.settings.lazyloadad).lazyLoadAd({
 			forceLoad    : true,       // Ad is loaded even if not visible. Default is false.
-			timeout        : 0,          // Timeout ad load
+			timeout        : 5,          // Timeout ad load
 			syncAds: true,
 			debug          : false,    // For debug use : draw colors border depends on load status
 		});  
